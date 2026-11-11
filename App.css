@@ -1,0 +1,687 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(ellipse at 15% 20%, #25205a 0%, transparent 40%),
+    radial-gradient(ellipse at 85% 80%, #171d48 0%, transparent 40%),
+    #080b18;
+  color: #f8fafc;
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, #ffffff80 50%, transparent 100%),
+    radial-gradient(2px 2px at 70% 20%, #ffffff70 50%, transparent 100%),
+    radial-gradient(1px 1px at 40% 80%, #ffffff80 50%, transparent 100%),
+    radial-gradient(1px 1px at 90% 60%, #ffffff80 50%, transparent 100%);
+  background-size: 250px 250px;
+}
+
+.navbar {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7%;
+  background: rgba(0, 0, 0, 0.92);
+  border-bottom: 1px solid #333333;
+  backdrop-filter: blur(15px);
+  position: relative;
+  z-index: 1;
+}
+
+.navbar h2 {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.navbar h2 span {
+  color: #ffffff;
+}
+
+.navbar p {
+  color: #999999;
+  font-size: 14px;
+}
+
+.main-container {
+  max-width: 1250px;
+  margin: 55px auto;
+  padding: 0 25px;
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 30px;
+}
+
+.profile-card,
+.chat-card {
+  background: rgba(12, 12, 12, 0.92);
+  border: 1px solid #333333;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(15px);
+}
+
+.profile-card {
+  text-align: center;
+}
+
+.avatar {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #eeeeee, #555555);
+  color: #000000;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0 auto 20px;
+  box-shadow: 0 0 25px #ffffff33;
+}
+
+.profile-card h2,
+.chat-header h2 {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.profile-card h2 {
+  font-size: 21px;
+}
+
+.subtitle {
+  color: #999999;
+  margin-top: 9px;
+  font-size: 14px;
+}
+
+.profile-section {
+  text-align: left;
+  margin-top: 30px;
+  border-top: 1px solid #ffffff16;
+  padding-top: 22px;
+}
+
+.profile-section h3 {
+  color:#e5e5e5;
+  font-size: 15px;
+  margin-bottom: 13px;
+}
+
+.profile-section p {
+  color: #cbd5e1;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.skills span {
+  background: #151515;
+  border: 1px solid #444444;
+  color: #eeeeee;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+.chat-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 600px;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ffffff18;
+  padding-bottom: 23px;
+}
+
+.chat-header h2 {
+  font-size: 22px;
+}
+
+.chat-header p {
+  color: #94a3b8;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.status {
+  color: #4ade80;
+  font-size: 13px;
+}
+
+.chat-body {
+  flex: 1;
+  padding: 30px 0;
+}
+
+.bot-message {
+  background: #25264a;
+  border: 1px solid #8b5cf644;
+  color: #e2e8f0;
+  padding: 17px;
+  border-radius: 14px;
+  max-width: 80%;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.chat-input {
+  display: flex;
+  gap: 12px;
+  border-top: 1px solid #ffffff18;
+  padding-top: 22px;
+}
+
+.chat-input input {
+  flex: 1;
+  min-width: 0;
+  padding: 15px;
+  background: #080808;
+  color: #ffffff;
+  border: 1px solid #444444;
+  border-radius: 10px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.chat-input input:focus {
+  border-color: #aaaaaa;
+}
+
+.chat-input input::placeholder {
+  color: #8490ad;
+}
+
+.chat-input button {
+  background: linear-gradient(135deg, #ffffff, #bdbdbd);
+  color: #000000;
+  border: none;
+  padding: 0 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.chat-input button:hover {
+  background: #d4d4d4;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 750px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    margin: 25px auto;
+  }
+
+  .navbar {
+    padding: 0 20px;
+  }
+}
+
+
+
+/* OUTER SPACE BACKGROUND */
+.app {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  background: none;
+}
+
+/* Galaxy and nebula */
+.space-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 15% 25%, #38246b66, transparent 45%),
+    radial-gradient(ellipse at 85% 70%, #172d6b66, transparent 45%),
+    radial-gradient(ellipse at 50% 50%, #100d2b, #050711 80%);
+}
+
+/* Twinkling stars */
+.stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 8% 15%, #fff 99%, transparent),
+    radial-gradient(2px 2px at 25% 45%, #c4b5fd 99%, transparent),
+    radial-gradient(1px 1px at 43% 12%, #fff 99%, transparent),
+    radial-gradient(2px 2px at 62% 68%, #fff 99%, transparent),
+    radial-gradient(1px 1px at 80% 25%, #c4b5fd 99%, transparent),
+    radial-gradient(1px 1px at 92% 82%, #fff 99%, transparent),
+    radial-gradient(1px 1px at 35% 85%, #fff 99%, transparent),
+    radial-gradient(2px 2px at 72% 48%, #a78bfa 99%, transparent);
+  background-size: 350px 300px;
+  animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* Falling comets */
+.comet {
+  position: absolute;
+  width: 170px;
+  height: 2px;
+  border-radius: 50%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #8b5cf6,
+    #c4b5fd,
+    #ffffff
+  );
+  box-shadow: 0 0 12px 2px #a78bfa;
+  opacity: 0;
+  transform: rotate(35deg);
+  animation: comet-fall 7s linear infinite;
+}
+
+.comet-one {
+  top: 5%;
+  left: -15%;
+  animation-delay: 0s;
+}
+
+.comet-two {
+  top: 35%;
+  left: -25%;
+  animation-delay: 2.5s;
+}
+
+.comet-three {
+  top: 65%;
+  left: -20%;
+  animation-delay: 5s;
+}
+
+@keyframes comet-fall {
+  0% {
+    transform: translate(-10vw, -10vh) rotate(35deg);
+    opacity: 0;
+  }
+  8% { opacity: 1; }
+  85% { opacity: 1; }
+  100% {
+    transform: translate(120vw, 100vh) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+/* Keep the interface above the space background */
+.navbar,
+.main-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .stars,
+  .comet {
+    animation: none;
+  }
+}
+
+/* OUTER SPACE BACKGROUND */
+
+.app {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  background: none;
+}
+
+/* Galaxy and nebula glow */
+.space-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+  radial-gradient(ellipse at 15% 25%, #25252555, transparent 45%),
+  radial-gradient(ellipse at 85% 75%, #17171755, transparent 45%),
+  radial-gradient(ellipse at 50% 50%, #101010, transparent 65%),
+  #000000;
+}
+
+/* Keep the interface above the space background */
+.navbar,
+.main-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Twinkling stars */
+.stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+  radial-gradient(2px 2px at 10% 20%, #ffffff 99%, transparent),
+  radial-gradient(1px 1px at 25% 70%, #d4d4d4 99%, transparent),
+  radial-gradient(2px 2px at 45% 35%, #ffffff 99%, transparent),
+  radial-gradient(1px 1px at 65% 15%, #ffffff 99%, transparent),
+  radial-gradient(2px 2px at 80% 55%, #d4d4d4 99%, transparent),
+  radial-gradient(1px 1px at 90% 85%, #ffffff 99%, transparent);
+  background-size: 350px 300px;
+  animation: twinkle 4s ease-in-out infinite alternate,
+             star-drift 35s linear infinite;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.35; }
+  to { opacity: 1; }
+}
+
+@keyframes star-drift {
+  from { transform: translateY(0); }
+  to { transform: translateY(-35px); }
+}
+
+/* Comets */
+.comet {
+  position: absolute;
+  width: 180px;
+  height: 2px;
+  border-radius: 50%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #777777,
+    #dddddd,
+    #ffffff
+  );
+  box-shadow: 0 0 12px 2px #ffffff66;
+  transform: rotate(35deg);
+  animation: comet-fall 8s linear infinite;
+}
+
+.comet-one {
+  top: 5%;
+  left: -20%;
+  animation-delay: 0s;
+}
+
+.comet-two {
+  top: 35%;
+  left: -30%;
+  animation-delay: 3s;
+}
+
+.comet-three {
+  top: 65%;
+  left: -25%;
+  animation-delay: 5.5s;
+}
+
+@keyframes comet-fall {
+  0% {
+    transform: translate(-15vw, -15vh) rotate(35deg);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  85% { opacity: 1; }
+  100% {
+    transform: translate(120vw, 100vh) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+  .stars,
+  .comet {
+    animation: none;
+  }
+}
+
+/* Premium monochrome card effects */
+
+.profile-card,
+.chat-card {
+  background: rgba(12, 12, 12, 0.88);
+  border: 1px solid #333333;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(255, 255, 255, 0.025);
+  transition: border-color 0.3s ease;
+}
+
+.profile-card:hover,
+.chat-card:hover {
+  border-color: #666666;
+}
+
+.bot-message {
+  background: #171717;
+  border: 1px solid #333333;
+  color: #eeeeee;
+}
+
+.user-message {
+  background: #eeeeee;
+  color: #080808;
+  padding: 17px;
+  border-radius: 14px;
+  max-width: 80%;
+  margin-left: auto;
+  font-size: 14px;
+  line-height: 1.8;
+} 
+/* Smooth chat animations */
+
+.bot-message,
+.user-message {
+  animation: message-appear 0.35s ease-out;
+  margin-bottom: 16px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+@keyframes message-appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth scrolling */
+.chat-body {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+.chat-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chat-body::-webkit-scrollbar-thumb {
+  background: #555555;
+  border-radius: 10px;
+} 
+
+
+/* Distant monochrome planet */
+/* Saturn */
+.planet {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  top: 18%;
+  right: 8%;
+  border-radius: 50%;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      #555555 0px,
+      #999999 5px,
+      #777777 10px,
+      #b0b0b0 15px
+    );
+  box-shadow:
+    inset -35px -15px 55px #000000,
+    inset 12px 8px 25px #ffffff66,
+    0 0 35px #ffffff22;
+  animation: planet-float 12s ease-in-out infinite alternate;
+  overflow: visible;
+}
+
+/* Saturn's rings */
+.planet::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 95px;
+  left: -65px;
+  top: 65px;
+  border: 12px solid #aaaaaa;
+  border-left-color: #555555;
+  border-right-color: #dddddd;
+  border-radius: 50%;
+  transform: rotate(-22deg);
+  box-shadow: 0 0 15px #ffffff33;
+  z-index: 1;
+}
+
+/* Planet shadow */
+.planet-shadow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 25% 30%,
+    transparent 25%,
+    #00000055 70%,
+    #000000 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+@keyframes planet-float {
+  from { transform: translateY(0); }
+  to { transform: translateY(18px); }
+}
+
+@media (max-width: 750px) {
+  .planet {
+    width: 130px;
+    height: 130px;
+    top: 15%;
+    right: 5%;
+    opacity: 0.5;
+  }
+
+  .planet::after {
+    width: 210px;
+    height: 60px;
+    left: -40px;
+    top: 40px;
+    border-width: 7px;
+  }
+}
+
+/* Saturn atmospheric glow */
+.planet {
+  filter: drop-shadow(0 0 18px #ffffff25);
+}
+
+/* Subtle ring glow */
+.planet::after {
+  box-shadow:
+    0 0 12px #ffffff44,
+    0 0 30px #ffffff18;
+}
+
+/* Distant stars around Saturn */
+.planet::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  top: -65px;
+  left: 35px;
+  border-radius: 50%;
+  background: white;
+  box-shadow:
+    45px 35px 0 1px #ffffff88,
+    120px -20px 0 0 #ffffff99,
+    210px 80px 0 1px #ffffff66,
+    270px -45px 0 0 #ffffff88,
+    310px 140px 0 1px #ffffff66,
+    -20px 170px 0 0 #ffffff77;
+  animation: star-twinkle 3s ease-in-out infinite alternate;
+}
+
+@keyframes star-twinkle {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+/* AI typing indicator */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 64px;
+  width: fit-content;
+  padding: 17px 20px;
+}
+
+.typing-indicator span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d4d4d4;
+  animation: typing-bounce 1.2s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes typing-bounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+  30% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+}
